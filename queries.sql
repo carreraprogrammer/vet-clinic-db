@@ -14,3 +14,6 @@ WHERE name LIKE 'Agumon' OR name LIKE 'Pikachu';
 
 SELECT name, date_of_birth FROM animals
 WHERE weight_kg > 10.5;
+
+SELECT * FROM animals
+WHERE neutered= TRUE;
