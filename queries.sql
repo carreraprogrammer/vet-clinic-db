@@ -12,7 +12,7 @@ WHERE neutered = TRUE AND escape_attempts < 3;
 SELECT date_of_birth FROM animals
 WHERE name LIKE 'Agumon' OR name LIKE 'Pikachu';
 
-SELECT name, date_of_birth FROM animals
+SELECT name, escape_attempts FROM animals
 WHERE weight_kg > 10.5;
 
 SELECT * FROM animals
