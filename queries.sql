@@ -51,3 +51,35 @@ SELECT * FROM animals;
 COMMIT;
 
 SELECT * FROM animals;
+
+-- TRANSACTION 3
+
+BEGIN;
+
+DELETE FROM animals;
+
+SELECT * FROM animals;
+
+ROLLBACK;
+
+SELECT * FROM animals;
+
+-- TRANSACTION 4
+
+BEGIN;
+
+DELETE FROM animals
+WHERE date_of_birth > '2022-01-01';
+
+SAVEPOINT SP1;
+
+UPDATE animals
+SET weight_kg = weight_kg * -1;
+
+ROLLBACK TO SAVEPOINT SP1;
+
+UPDATE animals
+SET weight_kg = weight_kg * -1
+WHERE wheight_kg < 0;
+
+SELECT * FROM animals;
