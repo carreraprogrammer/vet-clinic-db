@@ -23,3 +23,31 @@ WHERE name NOT LIKE 'Gabumon';
 
 SELECT * FROM animals
 WHERE weight_kg >= 10.4 AND weight_kg <= 17.3;
+
+-- TRANSACTIONS
+
+-- TRANSACTION 1
+
+BEGIN;
+UPDATE animals SET species = 'unespecified';
+SELECT * FROM animals;
+ROLLBACK;
+SELECT * FROM animals;
+
+-- TRANSACTION 2
+
+BEGIN;
+
+UPDATE animals
+SET species = 'Digimon'
+WHERE name LIKE '%mon';
+
+UPDATE animals
+SET species = 'Pokemon'
+WHERE name NOT LIKE '%mon';
+
+SELECT * FROM animals;
+
+COMMIT;
+
+SELECT * FROM animals;
