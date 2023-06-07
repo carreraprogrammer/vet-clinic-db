@@ -80,6 +80,12 @@ ROLLBACK TO SAVEPOINT SP1;
 
 UPDATE animals
 SET weight_kg = weight_kg * -1
-WHERE wheight_kg < 0;
+WHERE weight_kg < 0;
 
 SELECT * FROM animals;
+
+-- QUERIES
+
+SELECT COUNT(*) AS total_animals FROM animals;
+
+SELECT COUNT(*) AS animals_no_scape FROM animals WHERE escape_attempts = 0;
