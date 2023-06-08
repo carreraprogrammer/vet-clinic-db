@@ -23,3 +23,86 @@ WHERE name NOT LIKE 'Gabumon';
 
 SELECT * FROM animals
 WHERE weight_kg >= 10.4 AND weight_kg <= 17.3;
+
+-- TRANSACTIONS
+
+-- TRANSACTION 1
+
+BEGIN;
+UPDATE animals SET species = 'unespecified';
+SELECT * FROM animals;
+ROLLBACK;
+SELECT * FROM animals;
+
+-- TRANSACTION 2
+
+BEGIN;
+
+UPDATE animals
+SET species = 'Digimon'
+WHERE name LIKE '%mon';
+
+UPDATE animals
+SET species = 'Pokemon'
+WHERE name NOT LIKE '%mon';
+
+SELECT * FROM animals;
+
+COMMIT;
+
+SELECT * FROM animals;
+
+-- TRANSACTION 3
+
+BEGIN;
+
+DELETE FROM animals;
+
+SELECT * FROM animals;
+
+ROLLBACK;
+
+SELECT * FROM animals;
+
+-- TRANSACTION 4
+
+BEGIN;
+
+DELETE FROM animals
+WHERE date_of_birth > '2022-01-01';
+
+SAVEPOINT SP1;
+
+UPDATE animals
+SET weight_kg = weight_kg * -1;
+
+ROLLBACK TO SAVEPOINT SP1;
+
+UPDATE animals
+SET weight_kg = weight_kg * -1
+WHERE weight_kg < 0;
+
+SELECT * FROM animals;
+
+-- QUERIES
+
+SELECT COUNT(*) AS total_animals FROM animals;
+
+SELECT COUNT(*) AS animals_no_scape FROM animals WHERE escape_attempts = 0;
+
+SELECT AVG(weight_kg) AS AVG_WEIGHT FROM animals;
+
+SELECT neutered, COUNT(*) AS escape_count
+FROM animals
+GROUP BY neutered
+ORDER BY escape_count DESC;
+
+SELECT species, MIN(weight_kg) AS min_weight, 
+MAX(weight_kg) AS max_weight 
+FROM animals 
+GROUP BY species;
+
+SELECT species, AVG(escape_attempts) AS AVG_ESCAPE
+FROM animals
+WHERE date_of_birth BETWEEN '1990-01-01' AND '2000-12-31'
+GROUP BY species;
