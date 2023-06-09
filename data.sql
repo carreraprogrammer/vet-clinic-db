@@ -36,3 +36,14 @@ SET species_id =
     WHEN name LIKE '%mon' THEN 2
     ELSE 1
     END;
+
+UPDATE animals
+SET owner_id = 
+    CASE 
+    WHEN name = 'Agumon' THEN 1
+    WHEN name = 'Gabumon' OR name = 'Pikachu' THEN 2
+    WHEN name = 'Devimon' OR name = 'Plantmon' THEN 3
+    WHEN name = 'Charmander' OR name = 'Squirtle' OR name = 'Blossom' THEN 4
+    WHEN name = 'Angemon' OR name = 'Boarmon' THEN 5
+    ELSE NULL
+    END;
