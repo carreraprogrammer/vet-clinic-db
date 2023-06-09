@@ -167,3 +167,11 @@ JOIN animals a
 ON a.id = vi.animal_id
 GROUP BY vt.name
 HAVING vt.name = 'Stephanie Mendez';
+
+SELECT vt.name AS vet_name, a.species AS specialization
+FROM vets vt
+LEFT JOIN specializations s
+ON vt.id = s.vet_id
+LEFT JOIN animals a
+ON a.species_id = s.species_id
+GROUP BY vt.name, a.species;
