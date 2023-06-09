@@ -175,3 +175,10 @@ ON vt.id = s.vet_id
 LEFT JOIN animals a
 ON a.species_id = s.species_id
 GROUP BY vt.name, a.species;
+
+SELECT vt.name AS vet_name, a.name AS animal_name, vi.date_of_visits
+FROM vets vt
+JOIN visits vi ON vt.id = vi.vet_id
+JOIN animals a ON a.id = vi.animal_id
+WHERE vi.date_of_visits BETWEEN '2020-04-01 00:00:00' AND '2020-08-30 00:00:00'
+AND vt.name = 'Stephanie Mendez';
