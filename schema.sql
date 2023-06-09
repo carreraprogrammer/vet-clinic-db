@@ -21,7 +21,7 @@ CREATE TABLE owners (
 
 CREATE TABLE species (
     id INT GENERATED ALWAYS AS IDENTITY,
-    name VARCHAR(25)
+    name VARCHAR(25),
     PRIMARY KEY(id)
 );
 
