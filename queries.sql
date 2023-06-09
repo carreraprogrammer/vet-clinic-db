@@ -123,3 +123,9 @@ SELECT o.full_name, a.name AS animal_name
 FROM owners o
 LEFT JOIN animals a
 ON a.owner_id = o.id;
+
+SELECT s.name AS specie_name, COUNT(*) AS total_animals
+FROM animals a
+JOIN species s
+ON a.species_id = s.id
+GROUP BY s.name;
