@@ -158,3 +158,12 @@ JOIN vets vt ON vt.id = vi.vet_id
 WHERE vt.name = 'William Tatcher'
 ORDER BY date_of_visits DESC
 LIMIT 1;
+
+SELECT vt.name AS vet_name, COUNT(*) AS total_animals
+FROM vets vt
+JOIN visits vi
+ON vt.id = vi.vet_id
+JOIN animals a
+ON a.id = vi.animal_id
+GROUP BY vt.name
+HAVING vt.name = 'Stephanie Mendez';
