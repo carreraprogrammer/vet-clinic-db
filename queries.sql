@@ -150,3 +150,11 @@ JOIN animals a
 ON o.id = a.owner_id
 GROUP BY o.full_name
 ORDER BY total_animals  DESC;
+
+SELECT vt.name AS vet_name, a.name AS animal_name, vi.date_of_visits
+FROM animals a
+JOIN visits vi ON a.id = vi.animal_id
+JOIN vets vt ON vt.id = vi.vet_id
+WHERE vt.name = 'William Tatcher'
+ORDER BY date_of_visits DESC
+LIMIT 1;
