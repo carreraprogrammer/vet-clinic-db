@@ -112,3 +112,9 @@ FROM owners o
 RIGHT JOIN animals a
 ON o.id = a.owner_id
 WHERE o.full_name = 'Melody Pond';
+
+SELECT a.name, s.name AS species
+FROM animals a
+JOIN species s
+ON a.species_id = s.id
+WHERE s.name = 'Pokemon';
