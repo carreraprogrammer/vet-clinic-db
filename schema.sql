@@ -22,5 +22,26 @@ CREATE TABLE owners (
 CREATE TABLE species (
     id INT GENERATED ALWAYS AS IDENTITY,
     name VARCHAR(25)
+    PRIMARY KEY(id)
 );
 
+ALTER TABLE animals
+DROP COLUMN species;
+
+ALTER TABLE animals
+ADD COLUMN species_id INT;
+
+ALTER TABLE animals
+ADD COLUMN owner_id INT;
+
+ALTER TABLE animals
+ADD CONSTRAINT fk_species_id
+FOREIGN KEY (species_id)
+REFERENCES species(id)
+ON DELETE CASCADE;
+
+ALTER TABLE animals
+ADD CONSTRAINT fk_owner_id
+FOREIGN KEY (owner_id)
+REFERENCES owners(id)
+ON DELETE CASCADE;
