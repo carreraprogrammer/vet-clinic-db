@@ -191,8 +191,6 @@ GROUP BY a.name
 ORDER BY total_visits DESC
 LIMIT 1;
 
--- Who was Maisy Smith's first visit?
-
 SELECT vt.name AS vet_name, a.name AS animal_name, MIN(vi.date_of_visits)
 FROM vets vt
 JOIN visits vi ON vt.id = vi.vet_id
@@ -200,4 +198,15 @@ JOIN animals a ON a.id = vi.animal_id
 GROUP BY vt.name, a.name
 HAVING vt.name = 'Maisy Smith'
 ORDER BY MIN(vi.date_of_visits)
+LIMIT 1;
+
+SELECT a.id AS a_id, a.name AS a_name, a.date_of_birth AS a_date_of_birth,
+       a.escape_attempts AS a_escape_attempts, a.neutered AS a_neutered,
+       a.weight_kg AS a_weight_kg, a.species_id AS a_species_id, a.owner_id AS a_owner_id,
+       v.id AS v_id, v.name AS v_name, v.age AS v_age, v.date_of_graduation AS v_date_of_graduation,
+       d.date_of_visits AS v_date_of_visits
+FROM animals a
+JOIN visits d ON d.animal_id = a.id
+JOIN vets v ON v.id = d.vet_id
+ORDER BY d.date_of_visits DESC
 LIMIT 1;
