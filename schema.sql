@@ -66,3 +66,4 @@ CREATE TABLE visits(
   date_of_visits DATE
 );
 
+
