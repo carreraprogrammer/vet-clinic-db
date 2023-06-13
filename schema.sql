@@ -66,3 +66,6 @@ CREATE TABLE visits(
   date_of_visits DATE
 );
 
+-- IMPROVE FIRST QUERY
+
+CREATE INDEX idx_animal_id ON visits(animal_id);
