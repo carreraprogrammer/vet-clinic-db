@@ -33,6 +33,12 @@
 - Use data.sql to populate tables with sample data.
 - Check queries.sql for examples of queries that can be run on a newly created database. Important note: this file might include queries that make changes in the database (e.g., remove records). Use them responsibly!
 
+<div align="center">
+    <img src="Diagram_db_vet_clinic.png" alt="logo" width="700"  height="auto" />
+  <br/>
+  <h3><b>Paws and Claws Clinic</b></h3>
+</div>
+
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
@@ -153,7 +159,6 @@ Feel free to check the [issues page](https://github.com/carreraprogrammer/vet-cl
 ## ⭐️ Show your support <a name="support"></a>
 
 If you like this project please give a star.
-Thanks in advance.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -161,17 +166,12 @@ Thanks in advance.
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-I would like to thank all of my colleagues who inspire to do my best everyday.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FAQ (optional) -->
 
 ## ❓ FAQ <a name="faq"></a>
-
-- **Did you create this project from scratch?**
-
-  - Yes, and for that reason I learned a lot.
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
