@@ -36,7 +36,7 @@
 <div align="center">
     <img src="Diagram_db_vet_clinic.png" alt="logo" width="700"  height="auto" />
   <br/>
-  <h3><b>Paws and Claws Clinic</b></h3>
+  <h3><b>VET CLINIC DIAGRAM</b></h3>
 </div>
 
 ## 🛠 Built With <a name="built-with"></a>
